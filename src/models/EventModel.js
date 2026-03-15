@@ -27,6 +27,18 @@ const eventSchema = new mongoose.Schema({
 
   budget:{
     type:Number
+  },
+
+  location:{
+    city:String,
+    state:String,
+    country:String
+  },
+
+  status:{
+    type:String,
+    enum:["open","closed","completed","cancelled"],
+    default:"open"
   }
 
 },{timestamps:true})

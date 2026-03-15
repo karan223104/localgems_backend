@@ -13,6 +13,12 @@ DBConnection()
 const userRoutes = require("./src/routes/UserRoutes")
 app.use("/user",userRoutes)
 
+const talentRoutes = require("./src/routes/TalentRoutes")
+app.use("/talent",talentRoutes)
+
+const talentProviderRoutes = require("./src/routes/TalentProviderRoutes")
+app.use("/talentprovider",talentProviderRoutes)
+
 const PORT = process.env.PORT
 app.listen(PORT,()=>{
     console.log(`server started on port ${PORT}`)
