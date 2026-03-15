@@ -7,15 +7,15 @@ const mailSend = async(to,subject,text)=>{
         service:"gmail",
         auth:{
             user:process.env.EMAIL_USER,
-            pass:process.env.EMAIL_PASSWORD
+            pass:process.env.EMAIL_PASS
         }
     }) 
 
     const mailOptions = {
         to:to,
         subject:subject,
-        text:text
-        //html:text
+        // text:text <-- use for plain text
+        html:text              // <-- we can use html here for designed mail
     }
 
     const mailResponse = await transporter.sendMail(mailOptions)
